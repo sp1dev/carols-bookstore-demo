@@ -1,0 +1,18 @@
+<%- include('../partials/head') -%>
+
+<h1><%= author.lastName %>'s Author Detail</h1>
+<div>
+  <p>First Name: <%= author.firstName %></p>
+  <p>Last Name: <%= author.lastName %></p>
+  <p>Birth Year: <%= author.birthYear %></p>
+  <p>Biography: <%= author.bio%></p>
+
+  <div>
+      <button><a href="/authors/<%= author._id %>/edit">Edit</a></button>
+  </div>
+  <form action="/authors/<%= author._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+  </form>   
+</div>
+
+<%- include('../partials/footer') -%>

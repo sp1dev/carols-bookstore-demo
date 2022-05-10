@@ -1,0 +1,31 @@
+<%- include('../partials/head') -%>
+
+<h1>Edit a Author</h1>
+<form action="/authors/<%= author._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="firstName">First Name: </label>
+        <input type="text" name="firstName" id="firstName" value="<%= author.firstName %>"/>
+    </div>
+
+    <div>
+      <label for="lastName">Last Name: </label>
+      <input type="text" name="lastName" id="lastName" value="<%= author.lastName %>"/>
+    </div>
+
+    <div>
+        <label for="birthYear">Birth Year: </label>
+        <input type="text" name="birthYear" id="birthYear" value="<%= author.birthYear %>"/>
+    </div>
+
+    <div>
+        <label for="bio">Biography: </label>
+        <textarea name="bio" id="bio" placeholder="Biography"><%= author.bio %></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+
+</form>
+
+<%- include('../partials/footer') -%>

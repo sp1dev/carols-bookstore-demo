@@ -1,0 +1,32 @@
+<%- include('../partials/head') -%>
+
+<h1>Edit a Book</h1>
+<form action="/books/<%= book._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" value="<%= book.title %>" />
+    </div>
+
+    <div>
+        <!-- For now we will manually enter author information. When we move to databases, we will populate authors from our database -->
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author" value="<%= book.author %>" />
+    </div>
+
+    <div>
+        <label for="price">Price: </label>
+        <input type="number" name="price" id="price" min="1" value="<%= book.price %>" />
+    </div>
+
+    <div>
+        <label for="numSold">Copies Sold: </label>
+        <input type="number" name="numSold" id="numSold" min="0" value="<%= book.numSold %>" />
+    </div>
+
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+
+</form>
+
+<%- include('../partials/footer') -%>

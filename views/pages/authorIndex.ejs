@@ -1,0 +1,21 @@
+<%- include('../partials/head') -%>
+
+<h1>Display All Authors <a href="/authors/new"><button>Create new author</button></a></h1>
+<div>
+    <% data.forEach( author => { %>
+      <p>First Name: <%= author.firstName %></p>
+      <p>Last Name: <a href="/authors/<%= author._id %>"><%= author.lastName %></a></p>
+      <p>Birth Year: <%= author.birthYear %></p>
+      <p>Biography: <%= author.bio%></p>
+
+        <div>
+            <button><a href="/authors/<%= author._id %>/edit">Edit</a></button>
+        </div>
+        <form action="/authors/<%= author._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>   
+    <% }); %>
+
+</div>
+
+<%- include('../partials/footer') -%>
