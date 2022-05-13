@@ -1,6 +1,6 @@
 <%- include('../partials/head') -%>
 
-<h1>Display All Books <a href="/books/new"><button>Create new book</button></a></h1>
+<h1>Display ALL Books <a href="/books/new"><button>Create new book</button></a></h1>
 <div>
     <% data.forEach( book => { %>
         <h2><a href="/books/<%= book._id %>"><%= book.title %></a></h2>
